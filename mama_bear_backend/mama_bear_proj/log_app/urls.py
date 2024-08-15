@@ -4,8 +4,12 @@ from .views import DiaperLogListCreateView, DiaperLogDetailView, \
                    SleepLogListCreateView, SleepLogDetailView, \
                    MilestoneLogListCreateView, MilestoneLogDetailView, \
                    ActivityLogListCreateView, ActivityLogDetailView
+from .views import get_weather_data
+
 
 urlpatterns = [
+    path('weather/', get_weather_data, name='get-weather-data'),
+    
     path('diaper-logs/', DiaperLogListCreateView.as_view(), name='diaper-log-list-create'),
     path('diaper-logs/<int:id>/', DiaperLogDetailView.as_view(), name='diaper-log-detail'),
 

@@ -1,0 +1,36 @@
+.child-profile-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    background-color: var(--light-pink);
+  }
+  
+  .child-profile-page h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .child-profile-page p {
+    font-size: 1.5rem;
+    color: var(--dark-green);
+    margin-bottom: 1rem;
+  }
+  
+  .child-profile-page button {
+    width: 100%;
+    max-width: 200px;
+    padding: 0.5rem;
+    background-color: var(--dark-pink);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .child-profile-page button:hover {
+    background-color: var(--medium-pink);
+  }
+  

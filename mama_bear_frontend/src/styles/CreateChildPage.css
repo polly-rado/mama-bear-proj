@@ -1,0 +1,45 @@
+.create-child-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    background-color: var(--light-pink);
+  }
+  
+  .create-child-page h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .create-child-page form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  .create-child-page input {
+    margin-bottom: 1rem;
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid var(--medium-pink);
+  }
+  
+  .create-child-page button {
+    width: 100%;
+    padding: 0.5rem;
+    background-color: var(--dark-pink);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .create-child-page button:hover {
+    background-color: var(--medium-pink);
+  }
+  

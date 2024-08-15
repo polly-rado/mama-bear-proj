@@ -4,6 +4,8 @@ from rest_framework import status
 from django.shortcuts import get_object_or_404
 from .models import DiaperLog, FeedLog, SleepLog, MilestoneLog, ActivityLog
 from .serializers import DiaperLogSerializer, FeedLogSerializer, SleepLogSerializer, MilestoneLogSerializer, ActivityLogSerializer
+import requests
+from django.http import JsonResponse
 
 class DiaperLogListCreateView(APIView):
     def get(self, request):
@@ -164,3 +166,15 @@ class ActivityLogDetailView(APIView):
         activity_log = get_object_or_404(ActivityLog, id=id)
         activity_log.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+
+def get_weather_data(request):
+    url = 'https://api.openweathermap.org/data/2.5/weather'
+    params = {
+        'q': 'Chicago',
+        'appid': 'ec1fcdf7eb0af1cd8c133b1088e01163',
+        'units': 'imperial',
+    }
+    response = requests.get(url, params=params)
+    data = response.json()
+
+    return JsonResponse(data)

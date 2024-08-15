@@ -22,6 +22,7 @@ urlpatterns = [
     path('api/', include('user_app.urls')),  
     path('api/', include('child_app.urls')),  
     path('api/', include('log_app.urls')), 
+    path('api/', include('gemini_app.urls')),
        
 ]
 

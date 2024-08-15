@@ -1,0 +1,27 @@
+.dashboard-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  background-color: var(--light-pink);
+  padding: 2rem;
+}
+
+.dashboard-page h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.dashboard-page p {
+  font-size: 1.5rem;
+  color: var(--dark-green);
+}
+
+.weather-info {
+  background-color: var(--very-light-pink);
+  border: 1px solid var(--medium-pink);
+  padding: 1rem;
+  border-radius: 10px;
+}
