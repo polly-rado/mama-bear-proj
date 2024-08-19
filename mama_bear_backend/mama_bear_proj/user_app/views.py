@@ -9,6 +9,7 @@ from rest_framework.status import HTTP_201_CREATED
 from django.contrib.auth import authenticate
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.permissions import IsAuthenticated
+from django.http import JsonResponse
 
 class Sign_up(APIView):
     def post(self, request):
@@ -96,4 +97,5 @@ class Log_out(APIView):
         request.user.auth_token.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
 
-
+def test_connection(request):
+    return JsonResponse({"message": "Test was successful we are connected"})
