@@ -24,7 +24,7 @@ const GeminiPage = () => {
           onChange={(e) => setPrompt(e.target.value)}
           placeholder="Enter your prompt"
         />
-        <button type="submit">Submit</button>
+        <button className="custom-button" type="submit">Submit</button>
       </form>
       <div>
         <h2>Response:</h2>

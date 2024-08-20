@@ -29,12 +29,10 @@ function App() {
   }, [location.pathname, user])
 
   return (
-    <>
+    <div style={{ backgroundColor: '#F5EFE7', minHeight: '100vh' }}>
       <NavBar user = {user} setUser={setUser}/>
-     
       <Outlet context={{user, setUser}}/>
-  
-    </>
+    </div>
   );
 }
 

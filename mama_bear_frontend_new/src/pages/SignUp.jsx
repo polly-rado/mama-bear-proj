@@ -35,7 +35,7 @@ const SignUp = () => {
           placeholder="enter password" 
           required
         />
-        <input type="submit" value="sign up"/>
+        <input type="submit" value="sign up" className="custom-button"/>
       </form>
     </>  
   );

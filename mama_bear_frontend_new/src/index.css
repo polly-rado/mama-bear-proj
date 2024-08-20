@@ -1,1 +1,43 @@
-@import "https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css";
+@import url("https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css");
+
+body, html {
+    background-color: #F5EFE7;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  .custom-button {
+    background-color: #5B6453; /* Use the color code that matches the button background */
+    color: #FFFFFF; /* White text color */
+    border: none; /* No border */
+    border-radius: 10px; /* Rounded corners */
+    padding: 10px 20px; /* Padding around the text */
+    font-size: 16px; /* Adjust the font size */
+    font-family: 'Avenir', sans-serif; /* Ensure you have the font family applied */
+    letter-spacing: 2px; /* Add letter spacing */
+    text-align: center; /* Center the text */
+    cursor: pointer; /* Pointer cursor on hover */
+    display: inline-block; /* Keep it inline */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.custom-button:hover {
+    background-color: #4A5345; /* Slightly darker on hover */
+}
+
+.navbar {
+    padding: 20px 10px; /* Adjust the padding to increase height */
+    background-color: #eae4dc; /* Ensure the background color matches */
+}
+
+.navbar-brand, .navbar-nav .nav-link {
+    font-size: 18px; /* Adjust font size if needed */
+    padding: 10px 15px; /* Add padding to the links */
+}
+
+.navbar-toggler {
+    padding: 0.25rem 0.75rem; /* Adjust the padding on the toggle button */
+}
+

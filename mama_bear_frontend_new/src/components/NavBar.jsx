@@ -1,3 +1,4 @@
+import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -13,12 +14,12 @@ function NavBar({ user, setUser }) {
     };
 
     return (
-        <Navbar expand="lg" className="bg-body-tertiary">
+        <Navbar expand="lg" className="bg-body-tertiary navbar-custom">
             <Container>
                 {user ? (
                     <>
                         <Navbar.Brand as={Link} to="/">Mama Bear</Navbar.Brand>
-                        <Button onClick={handleClick} variant="light grey">Log Out</Button>
+                        <Button className="custom-button" onClick={handleClick} variant="light grey">Log Out</Button>
                         <Nav className="me-auto">
                             <Nav.Link as={Link} to="/dashboard">Dashboard</Nav.Link>
                             <Nav.Link as={Link} to="/gemini">Nanny Genie</Nav.Link>

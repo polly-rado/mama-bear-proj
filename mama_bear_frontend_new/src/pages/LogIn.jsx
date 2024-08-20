@@ -32,7 +32,7 @@ const LoginPage = () => {
           type="password"
           placeholder="enter password"
           required />
-        <input type="submit" value="log in" />
+        <input type="submit" value="log in" className="custom-button"  />
       </form>
     </div>
   );
