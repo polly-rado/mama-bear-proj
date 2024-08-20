@@ -1,15 +1,22 @@
 import { useState } from "react";
 import { signIn } from "../utilities";
-import { useOutletContext } from "react-router-dom";
+import { useOutletContext, useNavigate } from "react-router-dom";
 
 const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { setUser } = useOutletContext();
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setUser(await signIn(email, password));
+    const user = await signIn(email, password);
+    if (user) {
+      setUser(user);
+      navigate('/');
+    } else {
+      alert("Login failed. Please check your credentials");
+    }
 
   };
 
