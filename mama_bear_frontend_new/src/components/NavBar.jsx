@@ -18,7 +18,7 @@ function NavBar({ user, setUser }) {
             <Container>
                 {user ? (
                     <>
-                        <Navbar.Brand as={Link} to="/">Mama Bear</Navbar.Brand>
+                        <Navbar.Brand as={Link} to="/">Homepage</Navbar.Brand>
                         <Nav className="me-auto">
                             <Nav.Link as={Link} to="/dashboard">Dashboard</Nav.Link>
                             <Nav.Link as={Link} to="/gemini">Nanny Genie</Nav.Link>

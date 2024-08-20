@@ -41,3 +41,7 @@ body, html {
     padding: 0.25rem 0.75rem; /* Adjust the padding on the toggle button */
 }
 
+.navbar .ms-auto {
+    margin-left: auto;
+    margin-right: 0; /* Make sure there's no margin on the right */
+}
