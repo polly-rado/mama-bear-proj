@@ -17,6 +17,13 @@ const GeminiPage = () => {
 
   return (
     <div id="HomePage">
+      <h3>Need recommendations to get your day started? Let's ask Nanny Genie!</h3>
+    <div>
+      <h4>
+        Nanny Genie can help you with ideas for kids' activities, quick and easy kids' meals and bedtime stories 
+      </h4>
+      <h4>Don't be afraid to ask. Nanny Genie is here to help</h4>
+    </div>
       <form onSubmit={handleSubmit}>
         <input
           type="text"

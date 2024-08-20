@@ -45,3 +45,29 @@ body, html {
     margin-left: auto;
     margin-right: 0; /* Make sure there's no margin on the right */
 }
+
+/* index.css */
+
+.action-buttons {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.round-button {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: #4b5246; /* Adjust this to the color you want */
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    line-height: 150px; /* This centers the text vertically */
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.round-button:hover {
+    background-color: #3a4036; /* Darker shade on hover */
+}
