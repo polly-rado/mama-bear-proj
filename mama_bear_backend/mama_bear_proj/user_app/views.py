@@ -88,6 +88,7 @@ class Info(APIView):
 
     def get(self, request):
         return Response({"email": request.user.email})
+    
 
 class Log_out(APIView):
     authentication_classes = [TokenAuthentication]
