@@ -16,7 +16,10 @@ const SignUp = () => {
 
   return (
     <>
-      <h1>SignUp</h1>
+      <h1>Welcome to Mama Bear</h1>
+      <div>
+        <h4>Please Sign Up</h4>
+      </div>
       <form onSubmit={(e)=> handleSubmit(e)}>
         <input 
           value={email} 

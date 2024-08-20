@@ -18,7 +18,6 @@ function DashboardPage() {
 
     return (
         <div id="HomePage">
-          <button className="logout-button">Log Out</button>
           <h1>Dashboard</h1>
           {weatherData ? (
             <div className="weather-info">

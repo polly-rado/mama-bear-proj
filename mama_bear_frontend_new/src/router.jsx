@@ -5,11 +5,13 @@ import DashboardPage from './pages/DashboardPage'
 import GeminiPage from './pages/GeminiPage'
 import LogIn from './pages/LogIn'
 import SignUp from './pages/SignUp'
+// import { confirmUser } from './utilities'
 
 const router = createBrowserRouter([
     {
         path:"/",
         element: <App/>,
+        // loader: confirmUser,
         children: [
             {
                 index:true, 

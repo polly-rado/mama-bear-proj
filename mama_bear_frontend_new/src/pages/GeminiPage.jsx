@@ -17,7 +17,6 @@ const GeminiPage = () => {
 
   return (
     <div id="HomePage">
-      <button className="logout-button">Log Out</button>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
