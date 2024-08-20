@@ -22,20 +22,26 @@ export const signUp = async(email, password) => {
 };
 
 export const signIn = async(email, password) => {
-    let response = await api.post("log_in/", {
-        'email': email,  
-        'password': password, 
+    try {
+        let response = await api.post("log_in/", {
+            'email': email,  
+            'password': password, 
 
-    });
+        });
 
-    if (response.status === 200){
-        let {user, token} = response.data;
-        localStorage.setItem('token', token);
-        api.defaults.headers.common["Authorization"] = `Token ${token}`;
-        return user;
+        if (response.status === 200){
+            let {user, token} = response.data;
+            localStorage.setItem('token', token);
+            api.defaults.headers.common["Authorization"] = `Token ${token}`;
+            return user;
+        } else {
+            alert("credentials failed");
+            return null;
+        }
+    } catch (error) {
+        console.error("Error logging in:", error);
+        return null;
     }
-    alert("credentials failed");
-    return null;
 };
 
 export const logOut = async () => {
