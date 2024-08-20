@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { useOutletContext } from "react-router-dom";
+import { useState } from "react";
+import { useOutletContext, useNavigate } from "react-router-dom";
 import { signUp } from "../utilities";
 
 
@@ -8,10 +8,17 @@ const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const {setUser} = useOutletContext();
+  const navigate = useNavigate();
 
   const handleSubmit = async(e) => {
     e.preventDefault();
-    setUser(await signUp(email, password));
+    const user = await signUp(email, password);
+    if (user) {
+      setUser(user);
+      navigate('/');
+    } else {
+      alert('Sign-up failed! Please try again.');
+    }
   };
 
   return (

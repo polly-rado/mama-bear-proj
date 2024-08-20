@@ -19,10 +19,10 @@ function NavBar({ user, setUser }) {
                 {user ? (
                     <>
                         <Navbar.Brand as={Link} to="/">Mama Bear</Navbar.Brand>
-                        <Button className="custom-button" onClick={handleClick} variant="light grey">Log Out</Button>
                         <Nav className="me-auto">
                             <Nav.Link as={Link} to="/dashboard">Dashboard</Nav.Link>
                             <Nav.Link as={Link} to="/gemini">Nanny Genie</Nav.Link>
+                        <Button onClick={handleClick} variant="light grey" className="ms-auto">Log Out</Button>
                         </Nav>
                     </>
                 ) : (
