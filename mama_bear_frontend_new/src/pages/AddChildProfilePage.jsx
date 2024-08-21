@@ -1,12 +1,11 @@
-
 function AddChildProfilePage() {
   
 
-    return (
-        <div id="HomePage">
-          <h1>Add Child Profile</h1>
-        </div>
-      );
-    }
-    
+  return (
+      <div id="HomePage">
+        <h1>Create child profile</h1>
+      </div>
+    );
+  }
+  
 export default AddChildProfilePage;

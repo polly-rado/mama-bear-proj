@@ -55,6 +55,8 @@ export const logOut = async () => {
 }
 
 
+
+
 // export const confirmUser = async() => {
 //     let token = localStorage.getItem("token");
 //     if (token) {

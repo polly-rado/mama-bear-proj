@@ -71,3 +71,48 @@ body, html {
 .round-button:hover {
     background-color: #3a4036; /* Darker shade on hover */
 }
+#AddChildProfilePage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+#AddChildProfilePage h1 {
+    color: #333; /* Adjust to match your color scheme */
+    margin-bottom: 20px;
+}
+
+#AddChildProfilePage .form-group {
+    margin-bottom: 15px;
+}
+
+#AddChildProfilePage label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+#AddChildProfilePage input[type="text"],
+#AddChildProfilePage input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid #ccc; /* Adjust to match your color scheme */
+    background-color: #E6E1DC; /* Light background color */
+}
+
+#AddChildProfilePage button[type="submit"] {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border-radius: 30px;
+    background-color: #505A5B; /* Button background color */
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+#AddChildProfilePage button[type="submit"]:hover {
+    background-color: #424D4F; /* Slightly darker for hover effect */
+}
