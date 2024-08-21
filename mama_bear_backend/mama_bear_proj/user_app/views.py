@@ -82,14 +82,14 @@ class Log_in(APIView):
             status=status.HTTP_404_NOT_FOUND
         )
 
-class Info(APIView):
+class UserPermission(APIView):
     authentication_classes = [TokenAuthentication]
     permission_classes = [IsAuthenticated]
 
+class Info(UserPermission):
     def get(self, request):
-        return Response({"email": request.user.email})
+        return Response({"user": request.user.email})
     
-
 class Log_out(APIView):
     authentication_classes = [TokenAuthentication]
     permission_classes = [IsAuthenticated]
