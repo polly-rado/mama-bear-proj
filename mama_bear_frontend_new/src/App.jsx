@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
-import { Outlet, useNavigate, useLocation } from 'react-router-dom';
+import { Outlet, useNavigate, useLocation, useLoaderData } from 'react-router-dom';
 import NavBar  from './components/NavBar';
 import { api } from './utilities'; 
 
 function App() {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState(useLoaderData());
   const navigate = useNavigate();
   const location = useLocation();
 

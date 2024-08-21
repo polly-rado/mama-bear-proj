@@ -55,14 +55,40 @@ export const logOut = async () => {
 }
 
 
+export const confirmUser = async() => {
+    let token = localStorage.getItem("token");
+    if (token) {
+        api.defaults.headers.common["Authorization"] = `Token ${token}`;
+        let response = await api.get("info/");
+        return response.data.user;
+    }
+    return null;
+};
 
 
-// export const confirmUser = async() => {
-//     let token = localStorage.getItem("token");
-//     if (token) {
-//         api.defaults.headers.common["Authorization"] = `Token ${token}`;
-//         let response = await api.get("users/");
-//         return response.data.user;
-//     }
-//     return null;
-// };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
