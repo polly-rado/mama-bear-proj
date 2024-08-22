@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { getGeminiResponse, getDailySuggestions } from '../apis/gemini';
-import '../styles/LogBox.css';  // Import the CSS file
+import '../styles/LogBox.css';  
+import { marked } from 'marked'; 
 
 function GeminiPage() {
   const [prompt, setPrompt] = useState('');
@@ -10,7 +11,6 @@ function GeminiPage() {
     meals: ''
   });
 
-  // Fetch daily suggestions when the page loads
   useEffect(() => {
     const fetchSuggestions = async () => {
       const suggestions = await getDailySuggestions();
@@ -34,16 +34,21 @@ function GeminiPage() {
 
   return (
     <div id="HomePage">
-      <div className="log-box"> {/* Apply the box style here */}
+      <div className="log-box">
         <h3>Need recommendations to get your day started? Let's ask Nanny Genie!</h3>
-        <div>
-          <h4>Here are some daily suggestions:</h4>
-          <p><strong>Activities:</strong> {dailySuggestions.activities}</p>
-          <p><strong>Meals:</strong> {dailySuggestions.meals}</p>
+        <div className="suggestions-container">
+          <div className="suggestion-box">
+            <h4>Daily Activity Ideas:</h4>
+            <div dangerouslySetInnerHTML={{ __html: marked(dailySuggestions.activities) }} />
+          </div>
+          <div className="suggestion-box">
+            <h4>Daily Meal Suggestions:</h4>
+            <div dangerouslySetInnerHTML={{ __html: marked(dailySuggestions.meals) }} />
+          </div>
         </div>
       </div>
 
-      <form onSubmit={handleSubmit} className="log-box"> {/* Apply the box style here */}
+      <form onSubmit={handleSubmit} className="log-box">
         <h4>Still have questions? Ask Nanny Genie below:</h4>
         <input
           type="text"
@@ -54,12 +59,13 @@ function GeminiPage() {
         <button className="custom-button" type="submit">Submit</button>
       </form>
 
-      <div className="log-box"> {/* Apply the box style here */}
+      <div className="log-box">
         <h2>Response:</h2>
-        <p>{response}</p>
+        <div className="suggestion-box" dangerouslySetInnerHTML={{ __html: marked(response) }} />
       </div>
     </div>
   );
 }
 
 export default GeminiPage;
+

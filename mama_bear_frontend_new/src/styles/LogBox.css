@@ -1,0 +1,98 @@
+/* src/styles/LogBox.css */
+
+/* Box layout for logs */
+.log-box {
+    background-color: #ffffff;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+  }
+  
+  .log-box h2 {
+    margin-top: 0;
+    color: #333; /* Dark grey text */
+  }
+  
+  .log-box p {
+    margin: 5px 0;
+    color: #666; /* Medium grey text */
+  }
+  
+  .log-box input[type="text"], 
+  .log-box input[type="datetime-local"], 
+  .log-box input[type="date"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin: 5px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  
+  .log-box input[type="text"]:focus, 
+  .log-box input[type="datetime-local"]:focus, 
+  .log-box input[type="date"]:focus {
+    border: 1px solid #4CAF50; /* Green border on focus */
+    outline: none;
+  }
+  
+  .log-box button {
+    background-color: #5B6453; /* Use the color code that matches the button background */
+    color: #FFFFFF; /* White text color */
+    border: none; /* No border */
+    border-radius: 10px; /* Rounded corners */
+    padding: 10px 20px; /* Padding around the text */
+    font-size: 16px; /* Adjust the font size */
+    font-family: 'Avenir', sans-serif; /* Ensure you have the font family applied */
+    letter-spacing: 2px; /* Add letter spacing */
+    text-align: center; /* Center the text */
+    cursor: pointer; /* Pointer cursor on hover */
+    display: inline-block; /* Keep it inline */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+  }
+  
+  .log-box button:hover {
+    background-color: #4A5345; /* Slightly darker on hover */
+  }
+  
+  .suggestions-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .suggestion-box {
+    background-color: #ffffff;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 48%;  /* Adjust this width to make boxes wider or narrower */
+    box-sizing: border-box;
+  }
+  
+  .suggestion-box h4 {
+    margin-top: 0;
+    color: #333;
+    font-size: 20px;
+  }
+  
+  .suggestion-box div {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  
+  .suggestion-box ul, .suggestion-box ol {
+    list-style-type: none; /* Remove bullet points */
+    padding-left: 0; /* Remove padding */
+    margin: 0;
+  }
+  
+  .suggestion-box li {
+    margin-bottom: 10px; /* Add some spacing between list items */
+  }
+  

@@ -1,75 +1,93 @@
 import React, { useState, useEffect } from 'react';
-import FeedLog from '../components/FeedLog';
-import SleepLog from '../components/SleepLog';
-import ActivityLog from '../components/ActivityLog';
-import '../styles/LogBox.css'; 
+import { api } from '../apis/axios';
+import { useParams } from 'react-router-dom';
 
 function ChildProfilePage() {
-  const [childProfiles, setChildProfiles] = useState([]);
+    const { id } = useParams();  
+    const [child, setChild] = useState(null);
+    const [logs, setLogs] = useState({ feed: [], sleep: [], activity: [] });
 
-  
-  useEffect(() => {
-    const savedProfiles = JSON.parse(localStorage.getItem('childProfiles')) || [];
-    setChildProfiles(savedProfiles);
-  }, []);
+    useEffect(() => {
+        const fetchChildData = async () => {
+            try {
+                const response = await api.get(`/children/${id}/`);
+                setChild(response.data);
+                setLogs({
+                    feed: response.data.feed_logs,
+                    sleep: response.data.sleep_logs,
+                    activity: response.data.activity_logs,
+                });
+            } catch (error) {
+                console.error('Error fetching child data:', error);
+            }
+        };
 
-  
-  const handleDeleteProfile = (index) => {
-    const updatedProfiles = childProfiles.filter((_, i) => i !== index);
-    setChildProfiles(updatedProfiles);
-    localStorage.setItem('childProfiles', JSON.stringify(updatedProfiles));
-  };
+        fetchChildData();
+    }, [id]);
 
-  return (
-    <div id="HomePage">
-      <h1>Child Profiles</h1>
-      <ul>
-        {childProfiles.map((profile, index) => (
-          <li key={index} className="log-box">
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-              <h2>{profile.name}</h2>
-              <button className="custom-button" onClick={() => handleDeleteProfile(index)} style={{ backgroundColor: '', color: 'white', border: 'none', borderRadius: '5px', padding: '5px 10px', cursor: 'pointer' }}>
-                Delete
-              </button>
-            </div>
-            <p>Birthday: {profile.birthday}</p>
-            <p>Blood Type: {profile.bloodType}</p>
-            <p>Allergies: {profile.allergies || 'None'}</p>
 
-            <FeedLog
-              logs={profile.feedLogs || []}
-              setLogs={(newLogs) => {
-                const updatedProfiles = [...childProfiles];
-                updatedProfiles[index].feedLogs = newLogs;
-                setChildProfiles(updatedProfiles);
-                localStorage.setItem('childProfiles', JSON.stringify(updatedProfiles));
-              }}
-            />
+const handleAddLog = async (type, logData) => {
+  try {
+      const response = await api.post(`/children/${id}/${type}-logs/`, logData);
+      setLogs(prevLogs => ({
+          ...prevLogs,
+          [type]: [...prevLogs[type], response.data],
+      }));
+  } catch (error) {
+      console.error(`Error adding ${type} log:`, error);
+  }
+};
 
-            <SleepLog
-              logs={profile.sleepLogs || []}
-              setLogs={(newLogs) => {
-                const updatedProfiles = [...childProfiles];
-                updatedProfiles[index].sleepLogs = newLogs;
-                setChildProfiles(updatedProfiles);
-                localStorage.setItem('childProfiles', JSON.stringify(updatedProfiles));
-              }}
-            />
+<form onSubmit={(e) => {
+  e.preventDefault();
+  handleAddLog('feed', {
+      type: 'Milk',
+      amount: '200ml',
+      date_and_time: new Date(),
+      notes: 'Fed well',
+  });
+}}>
+  <input type="text" placeholder="Log type" required />
+  <input type="text" placeholder="Amount" required />
+  <input type="datetime-local" />
+  <textarea placeholder="Notes"></textarea>
+  <button type="submit">Add Log</button>
+</form>
 
-            <ActivityLog
-              logs={profile.activityLogs || []}
-              setLogs={(newLogs) => {
-                const updatedProfiles = [...childProfiles];
-                updatedProfiles[index].activityLogs = newLogs;
-                setChildProfiles(updatedProfiles);
-                localStorage.setItem('childProfiles', JSON.stringify(updatedProfiles));
-              }}
-            />
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
+
+    return (
+        <div>
+            {child && (
+                <>
+                    <h1>{child.name}'s Profile</h1>
+                    <p>Birthday: {child.birthday}</p>
+                    <p>Blood Type: {child.blood_type}</p>
+                    <p>Allergies: {child.allergies}</p>
+
+                    <h2>Feed Logs</h2>
+                    <ul>
+                        {logs.feed.map(log => (
+                            <li key={log.feed_log_id}>{log.type} - {log.amount} on {log.date_and_time}</li>
+                        ))}
+                    </ul>
+
+                    <h2>Sleep Logs</h2>
+                    <ul>
+                        {logs.sleep.map(log => (
+                            <li key={log.sleep_log_id}>From {log.start_time} to {log.end_time}</li>
+                        ))}
+                    </ul>
+
+                    <h2>Activity Logs</h2>
+                    <ul>
+                        {logs.activity.map(log => (
+                            <li key={log.activity_log_id}>{log.activity} on {log.date}</li>
+                        ))}
+                    </ul>
+                </>
+            )}
+        </div>
+    );
 }
 
 export default ChildProfilePage;

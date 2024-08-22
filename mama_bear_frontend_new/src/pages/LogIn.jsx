@@ -21,8 +21,9 @@ const LoginPage = () => {
   };
 
   return (
-    <div id="HomePage">
-      <h1>Welcome Back!</h1>
+    <section className="hero">
+      <div className="content">
+        <h1>Welcome Back!</h1>
       <div>
         <h4>Enter your log in credentials</h4>
       </div>
@@ -39,9 +40,10 @@ const LoginPage = () => {
           type="password"
           placeholder="enter password"
           required />
-        <input type="submit" value="log in" className="custom-button"  />
+        <input type="submit" value="log in" />
       </form>
     </div>
+    </section>
   );
 }
 

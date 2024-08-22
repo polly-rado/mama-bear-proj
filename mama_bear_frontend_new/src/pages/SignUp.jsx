@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useOutletContext, useNavigate } from "react-router-dom";
 import { signUp } from "../utilities";
-
+import "../App.css";
 
 
 const SignUp = () => {
@@ -23,11 +23,12 @@ const SignUp = () => {
 
   return (
     <>
-      <h1>Welcome to Mama Bear</h1>
-      <div>
-        <h4>Please Sign Up</h4>
-      </div>
-      <form onSubmit={(e)=> handleSubmit(e)}>
+    <section className="hero">
+      <div className="content">
+        <h1>Welcome to Mama Bear</h1>
+        <p>Enhancing the bond between parents and caregivers with seamless communication and magical coordination</p>
+        <p>Join us today!</p>
+       <form onSubmit={(e)=> handleSubmit(e)}>
         <input 
           value={email} 
           onChange={(e) => setEmail(e.target.value)}
@@ -42,8 +43,10 @@ const SignUp = () => {
           placeholder="enter password" 
           required
         />
-        <input type="submit" value="sign up" className="custom-button"/>
+        <input type="submit" value="sign up"/>
       </form>
+      </div>
+    </section>
     </>  
   );
 };
