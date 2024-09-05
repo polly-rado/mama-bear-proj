@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { getGeminiResponse, getDailySuggestions } from '../apis/gemini';
-import '../styles/LogBox.css';  
-import { marked } from 'marked'; 
+import '../styles/LogBox.css';  // Import the CSS file
 
 function GeminiPage() {
   const [prompt, setPrompt] = useState('');
@@ -11,6 +10,7 @@ function GeminiPage() {
     meals: ''
   });
 
+  // Fetch daily suggestions when the page loads
   useEffect(() => {
     const fetchSuggestions = async () => {
       const suggestions = await getDailySuggestions();
@@ -34,21 +34,16 @@ function GeminiPage() {
 
   return (
     <div id="HomePage">
-      <div className="log-box">
+      <div className="log-box"> {/* Apply the box style here */}
         <h3>Need recommendations to get your day started? Let's ask Nanny Genie!</h3>
-        <div className="suggestions-container">
-          <div className="suggestion-box">
-            <h4>Daily Activity Ideas:</h4>
-            <div dangerouslySetInnerHTML={{ __html: marked(dailySuggestions.activities) }} />
-          </div>
-          <div className="suggestion-box">
-            <h4>Daily Meal Suggestions:</h4>
-            <div dangerouslySetInnerHTML={{ __html: marked(dailySuggestions.meals) }} />
-          </div>
+        <div>
+          <h4>Here are some daily suggestions:</h4>
+          <p><strong>Activities:</strong> {dailySuggestions.activities}</p>
+          <p><strong>Meals:</strong> {dailySuggestions.meals}</p>
         </div>
       </div>
 
-      <form onSubmit={handleSubmit} className="log-box">
+      <form onSubmit={handleSubmit} className="log-box"> {/* Apply the box style here */}
         <h4>Still have questions? Ask Nanny Genie below:</h4>
         <input
           type="text"
@@ -59,9 +54,9 @@ function GeminiPage() {
         <button className="custom-button" type="submit">Submit</button>
       </form>
 
-      <div className="log-box">
+      <div className="log-box"> {/* Apply the box style here */}
         <h2>Response:</h2>
-        <div className="suggestion-box" dangerouslySetInnerHTML={{ __html: marked(response) }} />
+        <p>{response}</p>
       </div>
     </div>
   );
