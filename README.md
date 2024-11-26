@@ -8,18 +8,39 @@
 ### Child Profiles: Add and manage detailed profiles for each child, including personal information and logs.
 
 ### Logs: Track key events such as:
-Feeding schedules
-Sleep patterns
+Feeding schedules,
+Sleep patterns,
 Milestones and activities
 
 ## Tech Stack
 ### Frontend:
-JavaScript
-React
+JavaScript,
+React,
 CSS
 ### Backend:
-Python
-Django
+Python,
+Django,
 PostgreSQL
 
+## Setup Instructions:
+## Clone the repository:
+### git clone https://github.com/your-username/mama-bear-proj.git
+### cd mama-bear-proj
 
+## Navigate to the backend directory:
+### cd mama_bear_backend
+
+## Install dependencies and start the backend server:
+### pip install -r requirements.txt
+### python manage.py runserver
+
+## Navigate to the frontend directory:
+### cd ../mama_bear_frontend_new
+
+## Install frontend dependencies and start the development server:
+### npm install
+### npm start
+
+
+# Contribution
+### Feel free to fork the repository and create a pull request with your suggestions!
