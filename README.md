@@ -12,4 +12,14 @@
 ### Sleep patterns
 ### Milestones and activities
 
+## Tech Stack
+### Frontend:
+JavaScript
+React
+CSS
+### Backend:
+Python
+Django
+PostgreSQL
+
 
