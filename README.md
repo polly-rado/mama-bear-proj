@@ -8,9 +8,9 @@
 ### Child Profiles: Add and manage detailed profiles for each child, including personal information and logs.
 
 ### Logs: Track key events such as:
-### Feeding schedules
-### Sleep patterns
-### Milestones and activities
+Feeding schedules
+Sleep patterns
+Milestones and activities
 
 ## Tech Stack
 ### Frontend:
