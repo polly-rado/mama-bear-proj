@@ -4,10 +4,12 @@
 
 ## Features
 ### User Management: Create accounts and log in securely to manage parenting activities.
-Child Profiles: Add and manage detailed profiles for each child, including personal information and logs.
-Logs: Track key events such as:
-Feeding schedules
-Sleep patterns
-Milestones and activities
+
+### Child Profiles: Add and manage detailed profiles for each child, including personal information and logs.
+
+### Logs: Track key events such as:
+### Feeding schedules
+### Sleep patterns
+### Milestones and activities
 
 
